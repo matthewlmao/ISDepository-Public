@@ -19,6 +19,11 @@ body {
 .carousel-caption {
   bottom: 25%;
   z-index: 10;
+  mix-blend-mode: hard-light;
+}
+
+.bd-placeholder-img {
+  height: fit-content;
 }
 
 /* Declare heights because of positioning of img element */
