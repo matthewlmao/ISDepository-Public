@@ -32,6 +32,9 @@ body {
   text-align: center;
 }
 
+.navbarCollapse {
+  justify-content: center;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
