@@ -37,16 +37,35 @@ body {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.sample-products .flex-container {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  align-self: center;
+}
+/* rtl:begin:ignore */
+.sample-products .flex-container p {
+  text-align:left;
+}
+
+.sample-products .card {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-/* rtl:begin:ignore */
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-  text-align: center;
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
 }
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+
 /* rtl:end:ignore */
 
 
