@@ -1,3 +1,18 @@
 {
-    "liveServer.settings.port": 5501
+    "deploy": {
+        "targets": [
+          {
+            "type": "ftp",
+            "name": "Publish wwThreads",
+            "description": "Publish WebDemo Site",
+            "dir": "/site_root/WebConnectionProjects/WebDemo",
+            "host": "your-site.com",
+            "engine": "ftp",
+            "port": 21,
+            "secure": false,
+            "user": "username",
+            "password": "" // leave blank: prompt
+          }
+        ]
+      }
 }
