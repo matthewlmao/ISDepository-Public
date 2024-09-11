@@ -34,6 +34,7 @@ body {
 
 .navbarCollapse {
   justify-content: center;
+  gap: 10%;
 }
 
 /* MARKETING CONTENT
