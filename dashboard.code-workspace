@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../bootstrap/bootstrap-5.3.3-examples/dashboard"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
