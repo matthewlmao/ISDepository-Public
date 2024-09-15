@@ -167,14 +167,17 @@ class listingCard extends HTMLElement {
             }
         </style>
         <div class="card text-start" style="width:18rem;">
-          <img src="" class="card-img-top" alt="...">
+          <a href="listing-details.html">
+            <img src="" class="card-img-top" alt="...">
+          </a>
           <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text"></p>
+            <h5 class="card-title"><a href="listing-details.html" class="stretched-link"></h5>
+            <p class="card-text"><a href="listing-details.html" class="stretched-link"></p>
           </div>
           <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="listing-details.html" class="stretched-link"></li>
             <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
+
           </ul>
           <div class="card-body">
             <a class="btn btn-primary" href="#" role="button">Make offer</a>
