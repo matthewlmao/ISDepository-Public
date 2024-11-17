@@ -271,7 +271,7 @@
           <div class="carousel-caption">
             <h1>Buy and sell. Cheap and fast. Start now.</h1>
             <p class="opacity-85">The new one-stop shop for second-hand academic supplies</p>
-            <p><a class="btn btn-lg btn-primary" href="sign-in.html">Sign up now</a></p>
+            <p><a class="btn btn-lg btn-primary" href="./sign-in/sign-in.html">Sign up now</a></p>
           </div>
         </div>
       </div>
@@ -281,7 +281,7 @@
           <div class="carousel-caption">
             <h1>Exclusive for Island School students!</h1>
             <p class="opacity-85">Tailored to the needs of our tight-knit community.</p>
-            <p><a class="btn btn-lg btn-primary" href="sign-in.html">Sign up now</a></p>
+            <p><a class="btn btn-lg btn-primary" href="./sign-in/sign-in.html">Sign up now</a></p>
           </div>
         </div>
       </div>
@@ -291,7 +291,7 @@
           <div class="carousel-caption">
             <h1>Start browsing now</h1>
             <p class="opacity-85">Browse according to year group, subject, and more!</p>
-            <p><a class="btn btn-lg btn-primary" href="sign-in.html">Browse</a></p>
+            <p><a class="btn btn-lg btn-primary" href="./sign-in/sign-in.html">Browse</a></p>
           </div>
         </div>
       </div>
@@ -326,7 +326,7 @@
           price="250"
           condition="Brand new"
         ></listing-card>
-      </div><!-- card cont -->
+      </div> <!-- card cont -->
 
       <div class="flex-container"> <!--card-->
         <listing-card
@@ -336,7 +336,7 @@
           price="250"
           condition="Brand new"
         ></listing-card>
-      </div><!-- card cont -->
+      </div> <!-- card cont -->
 
       <div class="flex-container"> <!--card-->
         <listing-card
@@ -346,9 +346,9 @@
           price="250"
           condition="Brand new"
         ></listing-card>
-      </div><!-- card cont -->
+      </div> <!-- card cont -->
 
-  </div><!-- /.container -->
+  </div> <!-- /.container -->
 
   <!-- FOOTER -->
   <footer class="container">
@@ -357,5 +357,33 @@
   </footer>
 
 </main>
-    </body>
-</html>
+
+<script> 
+
+// Fetching stuff for listing ^-^
+document.addEventListener('DOMContentLoaded', () => {
+    const productList = document.getElementById('product-list');
+// Fetch listings from php 
+    fetch('fetch-listings.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not okay (I promise)');
+            }
+            return response.json();
+        })
+        // Where the magic happens... to show fetched data in listing cards 
+        .then(data => {
+            data.forEach(listing => {
+                const card = document.createElement('listing-card');
+                card.setAttribute('image', listing.image_url);
+                card.setAttribute('title', listing.title);
+                card.setAttribute('text', listing.description);
+                card.setAttribute('price', listing.price);
+                card.setAttribute('condition', listing.condition_name);
+                card.setAttribute('listing-id', listing.listing_id);
+
+                productList.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Oops! Could not fetch listings because...', error));
+});
