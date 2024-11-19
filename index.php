@@ -1,3 +1,7 @@
+<?php 
+  session_start(); 
+?> 
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   
@@ -367,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('fetch-listings.php')
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not okay (I promise)');
+                throw new Error('Network response was not okay (I promise)');   // My Chemical Romance reference. Sorry (not sorry). 
             }
             return response.json();
         })
@@ -387,3 +391,20 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Oops! Could not fetch listings because...', error));
 });
+
+</script>
+
+<?php
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    // For signed-in users 
+    echo "<h1>Welcome back, " . htmlspecialchars($_SESSION['username']) . "!</h1>";
+    // Serve signed-in content to these users 
+    include 'signed-in-content.php';
+} else {
+    // Redirect to sign-in page if they're not signed in 
+    header("Location: sign-in.php");
+    exit();
+}
+?>

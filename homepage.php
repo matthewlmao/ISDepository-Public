@@ -6,21 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="google-signin-client_id" content="ISDepository.apps.googleusercontent.com">
-
-    <title>ISDepository · Sign-in</title>
-    <script src="/components/cards/listing-card.js" type="module"></script>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
+    <title>ISDepository · Homepage</title>
+    <script src="./components/cards/listing-card.js" type="module"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="../assets/dist/js/bootstrap.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./assets/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="https://unpkg.com/@morbidick/bootstrap@latest/dist/elements.bundled.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-
   </head>
 
     <style>
@@ -137,7 +130,7 @@
     .btn-primary:not(:disabled):not(.disabled):active:focus,
     .btn-primary:not(:disabled):not(.disabled).active:focus,
     .show>.btn-primary.dropdown-toggle:focus {
-        box-shadow: 0 0 0 .2rem #ee3d2e
+        box-shadow: 0 0 0 .2rem rgba(91, 194, 194, 0.5)
     }
 
     .btn-outline-primary {
@@ -155,7 +148,7 @@
 
     .btn-outline-primary:focus,
     .btn-outline-primary.focus {
-        box-shadow: 0 0 0 .2rem #ee3d2e
+        box-shadow: 0 0 0 .2rem rgba(119, 204, 204, 0.5)
     }
 
     .btn-outline-primary.disabled,
@@ -168,25 +161,22 @@
     .btn-outline-primary:not(:disabled):not(.disabled).active,
     .show>.btn-outline-primary.dropdown-toggle {
         color: #212529;
-        background-color: #ee3d2e;
-        border-color: #ee3d2e;
+        background-color: #8ad3d3;
+        border-color: #7cc
     }
 
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
     .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
     .show>.btn-outline-primary.dropdown-toggle:focus {
-        box-shadow: 0 0 0 .2rem #ee3d2e;
+        box-shadow: 0 0 0 .2rem rgba(119, 204, 204, 0.5)
     }
-
-    
     </style>
 
     
     <!-- Custom styles for this template -->
-    <link href="./sign-in.css" rel="stylesheet">
+    <link href="homepage.css" rel="stylesheet">
   </head>
-  <body class="d-flex align-items-center py-4 bg-body-tertiary">
-    
+  <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -238,33 +228,165 @@
       </ul>
     </div>
 
-<main class="form-signin w-100 m-auto">
-  <form action="sign-in.php" method="post">
-    <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/ESF_Island_School_%28Hong_Kong%29_Logo.png/180px-ESF_Island_School_%28Hong_Kong%29_Logo.png" alt="" width="10%">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/ESF_Island_School_%28Hong_Kong%29_Logo.png/180px-ESF_Island_School_%28Hong_Kong%29_Logo.png" alt="Island School Logo" width="35px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="flex-container">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">
+            <img src="https://cdn-icons-png.flaticon.com/512/49/49116.png" style="zoom: 4%;align-content: center;filter: invert(1);">
+          </button>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button"><i class="bi-chat"></i></button>
+            <button class="btn btn-primary" type="button"><i class="bi-bookmark"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+  </nav>
+</header>
 
-    <div class="form-floating">
-      Email: <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      Password: <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
+<main>
 
-    <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Remember me
-      </label>
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <button id="sign-in-btn" class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024 ISDepository</p>
-  </form>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://island.edu.hk/wp-content/uploads/2022/08/NAM_1372-1.jpg" class="img-fluid" max-width="100%" max-height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Buy and sell. Cheap and fast. Start now.</h1>
+            <p class="opacity-85">The new one-stop shop for second-hand academic supplies</p>
+            <p><a class="btn btn-lg btn-primary" href="./sign-in/sign-in.html">Sign up now</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://island.edu.hk/wp-content/uploads/2023/08/IMG_3330-1.jpg" class="img-fluid" max-width="100%" max-height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Exclusive for Island School students!</h1>
+            <p class="opacity-85">Tailored to the needs of our tight-knit community.</p>
+            <p><a class="btn btn-lg btn-primary" href="./sign-in/sign-in.html">Sign up now</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://island.edu.hk/wp-content/uploads/2023/08/IMG_3303-1.jpg" class="img-fluid" max-width="100%" max-height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Start browsing now</h1>
+            <p class="opacity-85">Browse according to year group, subject, and more!</p>
+            <p><a class="btn btn-lg btn-primary" href="./sign-in/sign-in.html">Browse</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Products section. ================================================== -->
+
+  <div class="container sample-products">
+
+    <div class="flex-container"> <!-- big container -->
+      <script type="module">
+        import { Toast } from 'bootstrap.esm.min.js'
+      
+        Array.from(document.querySelectorAll('.toast'))
+          .forEach(toastNode => new Toast(toastNode))
+      </script>
+      
+      <div class="flex-container"> <!-- big container -->
+        <listing-card
+          image="https://media.karousell.com/media/photos/products/2022/6/13/ib_math_aasl_1655130640_efc42469_progressive.jpg"
+          title="IB Mathematics AASL Textbook"
+          text="Price negotiable"
+          price="250"
+          condition="Brand new"
+        ></listing-card>
+      </div> <!-- card cont -->
+
+      <div class="flex-container"> <!--card-->
+        <listing-card
+          image="https://media.karousell.com/media/photos/products/2022/6/13/ib_math_aasl_1655130640_efc42469_progressive.jpg"
+          title="IB Mathematics AASL Textbook"
+          text="Price negotiable"
+          price="250"
+          condition="Brand new"
+        ></listing-card>
+      </div> <!-- card cont -->
+
+      <div class="flex-container"> <!--card-->
+        <listing-card
+          image="https://media.karousell.com/media/photos/products/2022/6/13/ib_math_aasl_1655130640_efc42469_progressive.jpg"
+          title="IB Mathematics AASL Textbook"
+          text="Price negotiable"
+          price="250"
+          condition="Brand new"
+        ></listing-card>
+      </div> <!-- card cont -->
+
+  </div> <!-- /.container -->
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2024 ISDepository &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
+<script> 
 
+// Fetching stuff for listing ^-^
+document.addEventListener('DOMContentLoaded', () => {
+    const productList = document.getElementById('product-list');
+// Fetch listings from php 
+    fetch('fetch-listings.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not okay (I promise)');
+            }
+            return response.json();
+        })
+        // Where the magic happens... to show fetched data in listing cards 
+        .then(data => {
+            data.forEach(listing => {
+                const card = document.createElement('listing-card');
+                card.setAttribute('image', listing.image_url);
+                card.setAttribute('title', listing.title);
+                card.setAttribute('text', listing.description);
+                card.setAttribute('price', listing.price);
+                card.setAttribute('condition', listing.condition_name);
+                card.setAttribute('listing-id', listing.listing_id);
 
-    </body>
-</html>
+                productList.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Oops! Could not fetch listings because...', error));
+});
+
+</script> 
+
