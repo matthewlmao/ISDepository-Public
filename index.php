@@ -1,5 +1,13 @@
 <?php 
   session_start(); 
+
+  if (isset($_SESSION['user_id'])) {
+    // For signed-in users 
+    echo "<h1>Welcome back, " . htmlspecialchars($_SESSION['username']) . "!</h1>";
+    // Serve signed-in content to these users 
+    include 'homepage.php';
+} 
+
 ?> 
 
 <!doctype html>
@@ -11,10 +19,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>ISDepository · Homepage</title>
-    <script src="./components/cards/listing-card.js" type="module"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/dist/css/bootstrap.min.css">
     <script src="./assets/dist/js/bootstrap.min.js"></script>
     <script src="./assets/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="https://unpkg.com/@morbidick/bootstrap@latest/dist/elements.bundled.min.js"></script>
@@ -322,6 +329,8 @@
           .forEach(toastNode => new Toast(toastNode))
       </script>
       
+      <script src="/components/cards/listing-card.js" type="module"></script>
+      
       <div class="flex-container"> <!-- big container -->
         <listing-card
           image="https://media.karousell.com/media/photos/products/2022/6/13/ib_math_aasl_1655130640_efc42469_progressive.jpg"
@@ -394,17 +403,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 
-<?php
-session_start();
 
-if (isset($_SESSION['user_id'])) {
-    // For signed-in users 
-    echo "<h1>Welcome back, " . htmlspecialchars($_SESSION['username']) . "!</h1>";
-    // Serve signed-in content to these users 
-    include 'signed-in-content.php';
-} else {
-    // Redirect to sign-in page if they're not signed in 
-    header("Location: sign-in.php");
-    exit();
-}
 ?>

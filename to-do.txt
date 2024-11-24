@@ -1,0 +1,5 @@
+    -   Complete user system logic 
+        -   Fix sign-in logic 
+        -   Add registration option to sign-in page 
+        -   Add registration logic 
+            -   Ensure only island school email addresses are allowed for registration 
