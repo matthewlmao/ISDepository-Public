@@ -1,15 +1,15 @@
 <?php 
-include('../config.php'); 
+include_once'../config.php'; 
 
 // Handle form submission 
-if($DB_SERVER["request_method"] == "post"){
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"]) && isset($_POST["password"])){
 
-    // Get form data 
-    $email = $_POST["username"];
+// Get form data 
+    $email = $_POST["email"];
     $password = $_POST["password"];
 
         // Validation of input 
-        if(empty($email) or empty($password)){
+        if(empty($email) || empty($password)){
             echo "Please fill in all fields.";
         }
         elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -31,7 +31,7 @@ if($DB_SERVER["request_method"] == "post"){
             echo "Error!: "  . $stmt->error;
         }
 
-        $stmt->close();
+        $stmt->close(); 
     }
 }
 
