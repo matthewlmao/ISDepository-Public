@@ -1,6 +1,10 @@
 <?php
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
+
+$DB_SERVER = "127.0.0.1";
+$DB_USERNAME  = "root";
+$DB_PASSWORD = "";
+$DB_DATABASE = "ISDepository";
+
 define('DB_SERVER', '127.0.0.1');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
