@@ -25,7 +25,7 @@ if($DB_SERVER["request_method"] == "post"){
         $stmt->bind_param("sss", $email, $hashed_password);
 
         if($stmt->execute()){
-            echo "Successfull registered! ^-^";
+            echo "Successfully registered! ^-^";
         }
         else{
             echo "Error!: "  . $stmt->error;
