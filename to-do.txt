@@ -1,0 +1,15 @@
+  - AJAX Search bar for header 
+    - Look at jQuery and stuff
+
+  - Chat app in /messages 
+    - socket.io, node.js 
+    - https://youtu.be/rxzOqP9YwmM?si=plxDjTxOYB0ze7r0 tutorial by web dev simplified 
+
+  - Listing Details 
+    - should be simple, just echo rows of corresponding id to query 
+    - If the seller_id = user_id, then they have an edit button 
+
+  - User profiles (other users' listings) 
+    - same as my-listings but the 'user_id' is set by request 
+    - I want the url to show their username though, so maybe use username instead of user_id 
+    - BEFORE DOING THIS: add seller username (clickable) to listing-details to allow the query string to work

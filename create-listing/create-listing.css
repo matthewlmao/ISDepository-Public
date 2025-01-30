@@ -1,0 +1,10 @@
+.form-group {
+  margin-top: 1%;
+  margin-bottom: 1%; 
+}
+
+.dropdown { 
+  border-color: gray; 
+  broder-radius: 20px 20px 20px 20px;
+}
+
